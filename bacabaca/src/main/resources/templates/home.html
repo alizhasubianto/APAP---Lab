@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <object th:include="~{fragments/common :: js}" th:remove="tag"></object>
+  <object th:include="~{fragments/common :: css}" th:remove="tag"></object>
+  <title>Home</title>
+</head>
+
+<body>
+  <nav th:replace="~{fragments/navbar :: navbar}"></nav>
+  <div class="container text-center">
+    <div class="row pt-5 pb-2">
+      <h1>
+        <i class="bi bi-journal-code"></i>
+        Selamat Datang di BacaBaca!
+        <i class="bi bi-journal-code"></i>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a type="button" class="btn btn-primary m-2" href="/buku/create">Tambah Buku</a>
+        <a type="button" class="btn btn-primary m-2" href="/buku/viewall">Lihat Semua Buku</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a type="button" class="btn btn-primary m-2" href="/penerbit/create">Tambah Penerbit</a>
+        <a type="button" class="btn btn-primary m-2" href="/penerbit/viewall">Lihat Semua Penerbit</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a type="button" class="btn btn-primary m-2" href="/penulis/create">Tambah Penulis</a>
+        <a type="button" class="btn btn-primary m-2" href="/penulis/viewall">Lihat Semua Penulis</a>
+        <a type="button" class="btn btn-primary m-2" href="/penerbit/chart">Lihat Chart Penerbit</a>
+        <a type="button" class="btn btn-primary m-2" href="/buku/chart">Lihat Chart Buku Populer</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

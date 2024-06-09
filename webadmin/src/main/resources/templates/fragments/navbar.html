@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light ms-3">
+    <a class="navbar-brand fw-bold text-primary" href="/">BacaBaca</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}" th:classappend="${activePage == 'home' ? 'active' : ''}">Beranda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/buku/viewall-with-datatables}" th:classappend="${activePage == 'buku' ? 'active' : ''}" >Buku</a>
+      </li>
+      <li class="nav-item" th:class="${activePage == 'penerbit' ? 'active' : ''}">
+        <a class="nav-link" th:href="@{/penerbit/viewall}" th:classappend="${activePage == 'penerbit' ? 'active' : ''}">Penerbit</a>
+      </li>
+      <li class="nav-item" th:class="${activePage == 'penulis' ? 'active' : ''}">
+        <a class="nav-link" th:href="@{/penulis/viewall}" th:classappend="${activePage == 'penulis' ? 'active' : ''}">Penulis</a>
+      </li>
+      <li>
+        <a class="nav-item nav-link"
+          th:classappen="${page == 'user' ? 'active' : ''}"
+          href="/user/viewall">
+        User
+      </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav pull-right">
+      <a class="nav-item nav-link" th:href="@{/logout}">Logout</a>
+    </ul>
+  </div>
+  </nav>
+  </body>
+</html>
